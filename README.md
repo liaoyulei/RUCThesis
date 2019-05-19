@@ -1,25 +1,20 @@
 # RUCThesis  
-##中国人民大学LaTeX论文模板
+## 中国人民大学LaTeX论文模板
 
-目前支持本科、硕士（学硕+专硕）和博士
+此模板主要提供中国人民大学数学学院本科生使用。硕博建议直接使用原作者ZebinWang开发的[ructhesis](https://github.com/ZebinWang/ructhesis)。
 
-**如果已经有ructhesis.cls文件的可以直接使用。**  
+**请直接使用ructhesis.cls文件。**  
 **目前的版本使用了[2015国标](https://github.com/ustctug/gbt-7714-2015)的参考文献样式。**   
-在main.tex文件下使用如下命令：  
+建议使用[TeX Live](http://www.tug.org/texlive/)，其自带编辑器TeXworks，或者自行安装编辑器[TeXstudio](http://texstudio.sourceforge.net/)。依次按照`XeLaTeX-BibTeX-XeLaTeX-XeLaTeX`的顺序编译main.tex。
 
-这里我们使用xelatex作为排版引擎，第一步编译main.tex文件，第二步处理参考文献，然后再编译两遍生成pdf文件。
-
-`$ xelatex main.tex`  
-`$ bibtex main.tex`  
-`$ xelatex main.tex`  
-`$ xelatex main.tex` 
-
-##重要信息  
+## 重要信息  
 **1、编辑器要用UTF-8的编码要不然你打开是乱码。**  
 **2、排版引擎使用XeLaTeX，要不然会报错。**  
+**3、慎重使用CTEX，大概率无法编译。**
+**4、请使用`print.tex`将单面和双面打印部分分离. 直接在打印机上选择页码会出错.**
 
 
-###必要的字体文件
+### 必要的字体文件，可以在[这里](https://pan.baidu.com/s/1eRFJXnW)下载。
 
 字体 | PostScript名称 
 ------------ | ------------- 
@@ -30,12 +25,7 @@ Courier New | CourierNewPSMT
 黑体 | SimHei
 仿宋 | FangSong
 
-
-**需要生成封皮的还需要自行下载安装**  
-
-- 方正小标宋           PostScript名称:FZXBSJW–GB1-0
-
-###必要的宏包
+### 必要的宏包
 
 **全部都是TeX Live自带的**
 - ctexbook
@@ -50,19 +40,4 @@ Courier New | CourierNewPSMT
 - multicol
 - color
 - pstricks
-
-###想编译模板文件和生成手册的可以执行下述代码
-生成模板文件ructhesis.cls  
-`$ latex ructhesis.ins`  
-生成手册ructhesis.pdf  
-`$ xelatex ructhesis.dtx`  
-`$ makeindex -s gind.ist -o ructhesis.ind ructhesis.idx `  
-`$ makeindex -s gglo.ist -o ructhesis.gls ructhesis.glo `  
-`$ xelatex ructhesis.dtx`  
-`$ xelatex ructhesis.dtx`  
-
-###联系  
-如果模板本身的问题可以上[GitHub](https://github.com/ZebinWang/ructhesis)上发篇issue。   
-
-如果想贡献代码的请email我: <me@zebinwang.com> 
 

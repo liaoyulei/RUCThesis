@@ -1,0 +1,9 @@
+\chapter{关于软件}
+这是我参考的TeX Live安装教程~\footnote{https://blog.csdn.net/qq\_38386316/article/details/80272396}, 安装组件的时候一定要取消不需要的语言组件, 否则可能会遇到错误~\footnote{https://www.jianshu.com/p/df39944d0308}. 如果你打算直接使用编辑器TeXworks, 请把TeXworks editor组件勾选上. 
+
+安装教程里同时提供了编辑器TeXstudio的安装配置方法, 我没有使用过. TeXstudio也是很好用的编辑器. 请设置默认编辑器为XeLaTeX, 默认文献工具为BibTeX.
+
+编辑器TeXworks的界面比较简单, 可以在{\tt 编辑-首选项}中调整配置. 可以在{\tt 编辑器}项中设置合适的字体, 并将字号调大. {\tt Ctrl+鼠标左键}可实现tex与pdf间的跳转.
+
+并不是每一次修改都要同时进行{\tt XeLaTeX-BibTeX-XeLaTeX-XeLaTeX}四次编译. 第一次编译文件时, {\tt XeLaTeX}编译大多数文本. 并标记文中出现的引用. {\tt BibTeX}根据引用编译对应的参考文献. {\tt XeLaTeX}建立引用之间的链接. {\tt XeLaTeX}对参考文献标号. 因此之后再重新编译的时候, 可以根据经验减少编译次数. 通常在修改了{\tt .bib}或者增加新的参考文献需要{\tt BibTeX}编译, 涉及到引用目录更改需要两次{\tt XeLaTeX}编译.
+

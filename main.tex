@@ -9,16 +9,20 @@
 \documentclass[a4paper,bachelor]{ructhesis}
 
 %自添宏包
-\usepackage{skak}%国际象棋
-\usepackage{subfigure}%子图http://www.ctex.org/documents/latex/graphics/node111.html
-\usepackage{chemfig}%化学式
-\usetikzlibrary{trees}
-
-
+\usepackage{subfigure,amsthm,float}%子图http://www.ctex.org/documents/latex/graphics/node111.html
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{defin}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{prop}[theorem]{命题}
+\newtheorem{coro}[theorem]{推论}
+\newtheorem{remark}[theorem]{注记}
+\newtheorem*{thmA}{定理 A}
+\renewcommand\proofname{\bf 证明.}
 
 %将封面信息补全，相关专业名称过长的请在文字前添加命令\ziju{-0.15}
 %文头
-\sign{中国人民大学本科毕业论文}
+\sign{中国人民大学本科毕业论文（设计）}
 %\sign{硕士学位论文}
 %\sign{博士学位论文}
 
@@ -26,26 +30,26 @@
 
 %以下信息本科研究生都需要补全
 \title{中国人民大学LaTeX模板}%论文题名
-\author{许白黑}%作者
-\school{}%学院
-\field{\ }%专业
-\studentid{2012202000}%学号
-\advisor{}%指导老师
-\date{2015年12月11日}
+\author{某某某}%作者
+\school{数学学院}%学院
+\field{数学与应用数学}%专业
+\studentid{2015200000}%学号
+\advisor{}%指导教师亲笔签名
+\date{}%评阅或答辩日期
 
 
 %以下本科填写
-\grade{}%年级
-\score{4.0}%成绩
-\thesiscode{论文编码：RUC-BK-专业代码}%论文编码
-\subtitle{}%论文副题名，没有不填写
+\grade{2015级}%年级
+\score{}%成绩
+\thesiscode{论文编码：RUC-BK-070101-2015200000}%论文编码
+\subtitle{——无副标题就删掉括号中内容}%论文副题名，没有不填写
 
 
 %以下研究生填写
 \etitle{LaTeX template of Renmin university of China}%英文题目
 \keywords{\TeX{}}%论文主题词
 %摘要关键词
-\keywordzh{中文摘要关键词}%中文摘要关键词
+\keywordzh{关键词1\qquad 关键词2\qquad 关键词3}%中文摘要关键词
 \keyworden{English\qquad template}%英文摘要关键词
 
 
@@ -56,9 +60,9 @@
 \maketitle
 
 %独创性声明
-\originality
+%\originality
 %授权书在这插入
-\authorization{figures/shouquan.png}
+%\authorization{figures/shouquan.png}
 %中文摘要
 \include{format/cabstractpage}
 %英文摘要
@@ -68,11 +72,15 @@
 \frontmatter
 
 %正文目录
+\renewcommand\listfigurename{图片目录} 
+\renewcommand\listtablename{表格目录}
+\frontmatter
 \tableofcontents
-%插图目录
-\listoffigures
-%表格目录
+\listoffigures\vspace{20pt}
+\begingroup
+\let\clearpage\relax
 \listoftables
+\endgroup
 
 
 \mainmatter\clearpage
@@ -81,33 +89,22 @@
 %正文章节
 \include{chap/chapter1}
 \include{chap/chapter2}
-\include{chap/chapter3}
-\input{chap/chapter4}%要插入本科签名的最后一个章节,插入命令使用\input{}
+\input{chap/chapter3}%要插入本科签名的最后一个章节,插入命令使用\input{}
 
 %本科签名
-%\autograph
-
-
-%参考文献
-\bibliographystyle{ref/rucbib}
-\setcitestyle{super,square,comma,sort&compress}
-\bibliography{ref/test}
-\nocite{*}
-\addcontentsline{toc}{chapter}{参考文献}
-
-%附录
-\appendix
-\include{chap/appendix_1}
+\autograph
 
 %致谢
 \include{format/acknowledge}
 
+%参考文献
+\clearpage
+\addcontentsline{toc}{chapter}{参考文献}
+\bibliographystyle{ref/rucbib}
+\bibliography{ref/test}
 
+%附录
+\appendix
+\include{chap/appendix1}
 
 \end{document}  
-
-
-
-
-
-
